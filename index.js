@@ -17,7 +17,7 @@ var database = firebase.database()
 
 let province = []
 app.use(bodyParser.json())
-app.get('/', async(req,res)=> {
+app.get('/listhero', async(req,res)=> {
   await database.ref('peopleIncome').once('value').then(snapshot => {
     province = snapshot.val()
   })
